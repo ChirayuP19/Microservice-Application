@@ -1,0 +1,78 @@
+package com.chirayu.order.service;
+
+import com.chirayu.order.dto.CartItemRequest;
+import com.chirayu.order.entity.CartItem;
+import com.chirayu.order.repository.CartItemRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+@Transactional
+public class CartServiceImpl implements CartService{
+
+    private final CartItemRepository cartItemRepository;
+
+    @Override
+    public boolean addToCart(String userID, CartItemRequest request) {
+//        Optional<Product> productOpt = productRepository.findById(request.getProductId());
+//        if(productOpt.isEmpty())
+//            return false;
+
+//        Product product = productOpt.get();
+//        if (product.getStockQuantity()< request.getQuantity())
+//            return false;
+//        Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
+//        if(userOpt.isEmpty())
+//            return false;
+//
+//        User user = userOpt.get();
+        CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID,request.getProductId());
+        if(exsistingCartItem != null){
+            exsistingCartItem.setQuantity(exsistingCartItem.getQuantity()+ request.getQuantity());
+            exsistingCartItem.setPrice(BigDecimal.valueOf(1000));
+            cartItemRepository.save(exsistingCartItem);
+        }else {
+
+            CartItem cartItem = new CartItem();
+            cartItem.setProductId(request.getProductId());
+            cartItem.setUserId(userID);
+            cartItem.setQuantity(request.getQuantity());
+            cartItem.setPrice(BigDecimal.valueOf(1000));
+            cartItemRepository.save(cartItem);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean deleteItemFromCart(String userId, Long productId) {
+        try {
+            CartItem cartItem = cartItemRepository.findByUserIdAndProductId(userId, productId);
+
+            if(cartItem != null){
+                cartItemRepository.delete(cartItem);
+                return true;
+            }
+        }catch (NumberFormatException e){
+            log.error("Invalid User ID format: {}", userId);
+        }
+        return false;
+    }
+
+    @Override
+    public List<CartItem> getCart(String userId) {
+        return cartItemRepository.findByUserId(userId);
+    }
+
+    @Override
+    public void clearCart(String userId) {
+        cartItemRepository.deleteByUserId(userId);
+    }
+}
