@@ -28,16 +28,17 @@ public class UserServiceImpl implements UserService{
         User user = new User();
         updateUserFromRequest(user,userRequest);
         userRepository.save(user);
+
     }
 
 
-    public Optional<UserResponse> fetchAllUser(Long id) {
+    public Optional<UserResponse> fetchAllUser(String id) {
         return userRepository.findById(id)
                 .map(this::maptoUserResponse);
 
     }
 
-    public boolean updateAllUser(Long id, UserRequest userRequest) {
+    public boolean updateAllUser(String id, UserRequest userRequest) {
         return userRepository.findById(id)
                 .map(updatedUser -> {
                     updateUserFromRequest(updatedUser,userRequest);

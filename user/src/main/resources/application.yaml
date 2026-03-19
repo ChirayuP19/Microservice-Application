@@ -1,14 +1,9 @@
 spring:
   application:
     name: user-service
-  datasource:
-    url: jdbc:postgresql://localhost:5433/userdb
-    username: chirayu
-    password: chirayu
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
+  data:
+    mongodb:
+      uri: mongodb://chirayu:chirayu@localhost:27017/userdb?authSource=admin
+      database: userdb
 server:
   port: 8082

@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface UserService {
      List<UserResponse> fetchAllUser();
      void createUser(UserRequest userRequest);
-    Optional<UserResponse> fetchAllUser(Long id);
-    boolean updateAllUser(Long id, UserRequest userRequest);
+    Optional<UserResponse> fetchAllUser(String id);
+    boolean updateAllUser(String id, UserRequest userRequest);
 }

@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> getUserById(@PathVariable Long id){
+    public ResponseEntity<UserResponse> getUserById(@PathVariable String id){
 
         return userService.fetchAllUser(id)
                 .map(ResponseEntity::ok)
@@ -38,7 +38,7 @@ public class UserController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateData(@PathVariable Long id, @RequestBody UserRequest userRequest){
+    public ResponseEntity<String> updateData(@PathVariable String id, @RequestBody UserRequest userRequest){
         boolean updated = userService.updateAllUser(id, userRequest);
         if(updated)
             return ResponseEntity.status(HttpStatus.OK).body("User Updated Successfully");
