@@ -28,6 +28,7 @@ public class UserController {
         return new ResponseEntity<>("User created successfully", HttpStatus.CREATED);
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable String id){
 
