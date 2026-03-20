@@ -1,7 +1,17 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://chirayu:chirayu@localhost:27017/userdb?authSource=admin
-      database: userdb
+      uri: ${DB_URL}
+      database: ${DB_DATABASE}
+  RabbitMQ:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 8082

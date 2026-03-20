@@ -1,12 +1,22 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/order
-    username: chirayu
-    password: chirayu
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+  RabbitMQ:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 8083

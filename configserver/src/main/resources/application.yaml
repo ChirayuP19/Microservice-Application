@@ -7,6 +7,16 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/config
+          search-locations: file:////Users/chirayu/Documents/E-com-micro/configserver/src/main/resources/config
+  RabbitMQ:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 8888
