@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService{
     public List<UserResponse> fetchAllUser(){
         return userRepository.findAll().stream()
                 .map(this::maptoUserResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public void createUser(UserRequest userRequest){
@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService{
 
     private UserResponse maptoUserResponse(User user){
         UserResponse response = new UserResponse();
-        response.setId(String.valueOf(user.getId()));
+        response.setId(user.getId());
         response.setFirstName(user.getFirstName());
         response.setLastName(user.getLastName());
         response.setEmail(user.getEmail());

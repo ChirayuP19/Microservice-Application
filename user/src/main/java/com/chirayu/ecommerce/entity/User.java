@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Data
-@Document(collation ="users")
+@Document(collection ="users")
 public class User {
     @Id
     private String id;

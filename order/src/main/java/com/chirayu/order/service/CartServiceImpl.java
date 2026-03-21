@@ -1,6 +1,8 @@
 package com.chirayu.order.service;
 
+import com.chirayu.order.clients.ProductServiceClient;
 import com.chirayu.order.dto.CartItemRequest;
+import com.chirayu.order.dto.ProductResponse;
 import com.chirayu.order.entity.CartItem;
 import com.chirayu.order.repository.CartItemRepository;
 import jakarta.transaction.Transactional;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -19,19 +21,19 @@ import java.util.Optional;
 public class CartServiceImpl implements CartService{
 
     private final CartItemRepository cartItemRepository;
+    private final ProductServiceClient productServiceClient;
 
     @Override
     public boolean addToCart(String userID, CartItemRequest request) {
-//        Optional<Product> productOpt = productRepository.findById(request.getProductId());
-//        if(productOpt.isEmpty())
-//            return false;
+        ProductResponse productOpt = productServiceClient.getProductDetails(request.getProductId());
+        if(productOpt==null)
+            return false;
+        if (productOpt.getStockQuantity()< request.getQuantity())
+            return false;
 
-//        Product product = productOpt.get();
-//        if (product.getStockQuantity()< request.getQuantity())
-//            return false;
-//        Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
-//        if(userOpt.isEmpty())
-//            return false;
+//      Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
+//      if(userOpt.isEmpty())
+//          return false;
 //
 //        User user = userOpt.get();
         CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID,request.getProductId());

@@ -41,4 +41,11 @@ public class ProductController {
     public ResponseEntity<List<ProductResponse>> searchProducts(@RequestParam String keyword){
         return ResponseEntity.status(HttpStatus.OK).body(productService.searchProducts(keyword));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse>getProductById(@PathVariable("id") Long productId){
+        return productService.getProductById(productId)
+                .map(ResponseEntity::ok)
+                .orElseGet(()->ResponseEntity.notFound().build());
+    }
 }

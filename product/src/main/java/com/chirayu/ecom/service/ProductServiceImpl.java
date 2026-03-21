@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -35,7 +36,7 @@ public class ProductServiceImpl implements ProductService{
                     return mapToProductResponse(savedProduct);
                 })
                 .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "Product not found with id: " + id));
+                        HttpStatus.NOT_FOUND, "Product not found or Product Out of Stock with id: " + id));
     }
 
     @Override
@@ -43,7 +44,7 @@ public class ProductServiceImpl implements ProductService{
         return productRepository.findByActiveTrue()
                 .stream()
                 .map(this::mapToProductResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -62,7 +63,13 @@ public class ProductServiceImpl implements ProductService{
         return productRepository.searchProducts(keyword)
                 .stream()
                 .map(this::mapToProductResponse)
-                .collect(Collectors.toList());
+                .toList();
+    }
+
+    @Override
+    public Optional<ProductResponse> getProductById(Long productId) {
+        return productRepository.findByIdAndActiveTrue(productId)
+                .map(this::mapToProductResponse);
     }
 
     private ProductResponse mapToProductResponse(Product saveProduct) {
