@@ -10,18 +10,18 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import java.util.Optional;
 
 @Configuration
-public class ProductServiceClientConfig {
+public class UserServiceClientConfig {
 
     @Bean
-    public ProductServiceClient restClientInterfaceProduct(RestClient.Builder builder) {
+    public UserServiceClient restClientInterfaceUser(RestClient.Builder builder) {
         RestClient restClient = builder
-                .baseUrl("http://PRODUCT-SERVICE")
+                .baseUrl("http://USER-SERVICE")
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError,
-                        ((request, response) -> Optional.empty()))
+                        (request, response) -> Optional.empty())
                 .build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory =
                 HttpServiceProxyFactory.builderFor(adapter).build();
-        return factory.createClient(ProductServiceClient.class);
+        return factory.createClient(UserServiceClient.class);
     }
 }

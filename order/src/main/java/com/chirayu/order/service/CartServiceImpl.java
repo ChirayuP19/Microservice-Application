@@ -1,8 +1,10 @@
 package com.chirayu.order.service;
 
 import com.chirayu.order.clients.ProductServiceClient;
+import com.chirayu.order.clients.UserServiceClient;
 import com.chirayu.order.dto.CartItemRequest;
 import com.chirayu.order.dto.ProductResponse;
+import com.chirayu.order.dto.UserResponse;
 import com.chirayu.order.entity.CartItem;
 import com.chirayu.order.repository.CartItemRepository;
 import jakarta.transaction.Transactional;
@@ -18,30 +20,30 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Transactional
-public class CartServiceImpl implements CartService{
+public class CartServiceImpl implements CartService {
 
     private final CartItemRepository cartItemRepository;
     private final ProductServiceClient productServiceClient;
+    private final UserServiceClient userServiceClient;
 
     @Override
     public boolean addToCart(String userID, CartItemRequest request) {
         ProductResponse productOpt = productServiceClient.getProductDetails(request.getProductId());
-        if(productOpt==null)
+        if (productOpt == null)
             return false;
-        if (productOpt.getStockQuantity()< request.getQuantity())
+        if (productOpt.getStockQuantity() < request.getQuantity())
             return false;
 
-//      Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
-//      if(userOpt.isEmpty())
-//          return false;
-//
-//        User user = userOpt.get();
-        CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID,request.getProductId());
-        if(exsistingCartItem != null){
-            exsistingCartItem.setQuantity(exsistingCartItem.getQuantity()+ request.getQuantity());
+        UserResponse userOpt = userServiceClient.getUserDetails(userID);
+        if (userOpt == null)
+            return false;
+
+        CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID, request.getProductId());
+        if (exsistingCartItem != null) {
+            exsistingCartItem.setQuantity(exsistingCartItem.getQuantity() + request.getQuantity());
             exsistingCartItem.setPrice(BigDecimal.valueOf(1000));
             cartItemRepository.save(exsistingCartItem);
-        }else {
+        } else {
 
             CartItem cartItem = new CartItem();
             cartItem.setProductId(request.getProductId());
@@ -58,11 +60,11 @@ public class CartServiceImpl implements CartService{
         try {
             CartItem cartItem = cartItemRepository.findByUserIdAndProductId(userId, productId);
 
-            if(cartItem != null){
+            if (cartItem != null) {
                 cartItemRepository.delete(cartItem);
                 return true;
             }
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             log.error("Invalid User ID format: {}", userId);
         }
         return false;

@@ -17,15 +17,16 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
     private final CartService cartService;
     private final OrderRepository orderRepository;
 
+
     @Override
     public Optional<OrderResponse> createOrder(String userId) {
         List<CartItem> cartItems = cartService.getCart(userId);
-        if(cartItems.isEmpty()){
+        if (cartItems.isEmpty()) {
             return Optional.empty();
         }
 //        Optional<User> userOptional = userRepository.findById(Long.valueOf(userId));
@@ -44,9 +45,9 @@ public class OrderServiceImpl implements OrderService{
         order.setStatus(OrderStatus.CONFIRMED);
         order.setTotalAmount(totalPrice);
 
-        List<OrderItem> orderItems=cartItems
+        List<OrderItem> orderItems = cartItems
                 .stream()
-                .map(item->new OrderItem(
+                .map(item -> new OrderItem(
                         null,
                         item.getProductId(),
                         item.getQuantity(),
