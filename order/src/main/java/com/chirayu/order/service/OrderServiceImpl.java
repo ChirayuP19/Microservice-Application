@@ -1,8 +1,10 @@
 package com.chirayu.order.service;
 
 
+import com.chirayu.order.clients.UserServiceClient;
 import com.chirayu.order.dto.OrderItemDTO;
 import com.chirayu.order.dto.OrderResponse;
+import com.chirayu.order.dto.UserResponse;
 import com.chirayu.order.entity.CartItem;
 import com.chirayu.order.entity.Order;
 import com.chirayu.order.entity.OrderItem;
@@ -21,6 +23,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final CartService cartService;
     private final OrderRepository orderRepository;
+    private final UserServiceClient userServiceClient;
 
 
     @Override
@@ -29,17 +32,14 @@ public class OrderServiceImpl implements OrderService {
         if (cartItems.isEmpty()) {
             return Optional.empty();
         }
-//        Optional<User> userOptional = userRepository.findById(Long.valueOf(userId));
-//        if(userOptional.isEmpty()){
-//            return Optional.empty();
-//        }
-//        User user = userOptional.get();
-
+        UserResponse userDetails = userServiceClient.getUserDetails(userId);
+        if (userDetails == null) {
+            return Optional.empty();
+        }
         BigDecimal totalPrice = cartItems.stream()
                 .map(CartItem::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        //Create Order.
         Order order = new Order();
         order.setUserId(userId);
         order.setStatus(OrderStatus.CONFIRMED);

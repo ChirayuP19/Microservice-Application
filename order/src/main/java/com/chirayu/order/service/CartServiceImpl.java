@@ -7,6 +7,7 @@ import com.chirayu.order.dto.ProductResponse;
 import com.chirayu.order.dto.UserResponse;
 import com.chirayu.order.entity.CartItem;
 import com.chirayu.order.repository.CartItemRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ public class CartServiceImpl implements CartService {
     private final UserServiceClient userServiceClient;
 
     @Override
+    @CircuitBreaker(name = "orderService", fallbackMethod = "addToCartFallback")
     public boolean addToCart(String userID, CartItemRequest request) {
         ProductResponse productOpt = productServiceClient.getProductDetails(request.getProductId());
         if (productOpt == null)
@@ -78,5 +80,11 @@ public class CartServiceImpl implements CartService {
     @Override
     public void clearCart(String userId) {
         cartItemRepository.deleteByUserId(userId);
+    }
+
+    public boolean addToCartFallback(String userID,
+                                     CartItemRequest request,
+                                     Exception exception) {
+        return false;
     }
 }
