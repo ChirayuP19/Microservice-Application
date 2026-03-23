@@ -5,6 +5,9 @@ import com.chirayu.ecom.dto.ProductResponse;
 import com.chirayu.ecom.entity.Product;
 import com.chirayu.ecom.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -40,11 +43,10 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<ProductResponse> getAllProducts() {
-        return productRepository.findByActiveTrue()
-                .stream()
-                .map(this::mapToProductResponse)
-                .toList();
+    public Page<ProductResponse> getAllProducts(int page, int size) {
+        Pageable pageable= PageRequest.of(page,size);
+        return productRepository.findByActiveTrue(pageable)
+                .map(this::mapToProductResponse);
     }
 
     @Override

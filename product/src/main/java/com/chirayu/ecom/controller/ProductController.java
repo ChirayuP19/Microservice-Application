@@ -4,6 +4,7 @@ import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
 import com.chirayu.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +28,10 @@ public class ProductController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<ProductResponse>>getAllData(){
-        return ResponseEntity.status(HttpStatus.OK).body(productService.getAllProducts());
+    public ResponseEntity<Page<ProductResponse>>getAllData(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size){
+        return ResponseEntity.status(HttpStatus.OK).body(productService.getAllProducts(page,size));
     }
 
     @DeleteMapping("/{id}")

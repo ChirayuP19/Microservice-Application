@@ -4,6 +4,7 @@ import com.chirayu.ecommerce.dto.UserRequest;
 import com.chirayu.ecommerce.dto.UserResponse;
 import com.chirayu.ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,11 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("")
-    public ResponseEntity<List<UserResponse>> getAllUser(){
-        List<UserResponse> users = userService.fetchAllUser();
-        return  ResponseEntity.ok(users);
+    public ResponseEntity<Page<UserResponse>> getAllUser(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.fetchAllUser(page, size));
     }
 
     @PostMapping("")

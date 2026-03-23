@@ -7,9 +7,11 @@ import com.chirayu.ecommerce.entity.Address;
 import com.chirayu.ecommerce.entity.User;
 import com.chirayu.ecommerce.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 
@@ -18,10 +20,10 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
-    public List<UserResponse> fetchAllUser(){
-        return userRepository.findAll().stream()
-                .map(this::maptoUserResponse)
-                .toList();
+    public Page<UserResponse> fetchAllUser(int page,int size){
+        Pageable pageable= PageRequest.of(page,size);
+        return userRepository.findAll(pageable)
+                .map(this::maptoUserResponse);
     }
 
     public void createUser(UserRequest userRequest){
