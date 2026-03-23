@@ -86,6 +86,13 @@ services:
     networks:
       - postgres
 
+  redis:
+    image: redis:latest
+    container_name: redis_container
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
 networks:
   postgres:
     driver: bridge
