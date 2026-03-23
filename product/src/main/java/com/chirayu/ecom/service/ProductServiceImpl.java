@@ -2,6 +2,8 @@ package com.chirayu.ecom.service;
 
 import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
+import com.chirayu.ecom.elasticsearch.ProductDocument;
+import com.chirayu.ecom.elasticsearch.ProductSearchRepository;
 import com.chirayu.ecom.entity.Product;
 import com.chirayu.ecom.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,12 +24,14 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
+    private final ProductSearchRepository productSearchRepository;
 
     @Override
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = new Product();
         updateProductFromRequest(product,productRequest);
         Product saveProduct = productRepository.save(product);
+        productSearchRepository.save(mapToProductDocument(saveProduct));
         return mapToProductResponse(saveProduct);
     }
 
@@ -36,6 +41,7 @@ public class ProductServiceImpl implements ProductService{
                 .map(existingProduct -> {
                     updateProductFromRequest(existingProduct, productRequest);
                     Product savedProduct = productRepository.save(existingProduct);
+                    productSearchRepository.save(mapToProductDocument(savedProduct));
                     return mapToProductResponse(savedProduct);
                 })
                 .orElseThrow(() -> new ResponseStatusException(
@@ -55,17 +61,19 @@ public class ProductServiceImpl implements ProductService{
                 .map(product -> {
                     product.setActive(false);
                     productRepository.save(product);
+                    productSearchRepository.deleteById(String.valueOf(id));
                     return true;
                 })
                 .orElse(false);
     }
 
     @Override
-    public List<ProductResponse> searchProducts(String keyword) {
-        return productRepository.searchProducts(keyword)
-                .stream()
-                .map(this::mapToProductResponse)
-                .toList();
+    public Page<ProductResponse> searchProducts(String keyword,int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return productSearchRepository
+                .findByNameContainingOrDescriptionContainingOrCategoryContaining(
+                        keyword, keyword, keyword,pageable)
+                .map(this::mapDocumentToProductResponse);
     }
 
     @Override
@@ -96,5 +104,29 @@ public class ProductServiceImpl implements ProductService{
         product.setStockQuantity(productRequest.getStockQuantity());
         product.setImageUrl(productRequest.getImageUrl());
         product.setPrice(productRequest.getPrice());
+    }
+
+    private ProductResponse mapDocumentToProductResponse(ProductDocument doc) {
+        ProductResponse response = new ProductResponse();
+        response.setId(Long.valueOf(doc.getId()));
+        response.setName(doc.getName());
+        response.setDescription(doc.getDescription());
+        response.setCategory(doc.getCategory());
+        response.setPrice(BigDecimal.valueOf(doc.getPrice()));
+        response.setStockQuantity(doc.getStockQuantity());
+        response.setImageUrl(doc.getImageUrl());
+        return response;
+    }
+
+    private ProductDocument mapToProductDocument(Product product) {
+        return ProductDocument.builder()
+                .id(String.valueOf(product.getId()))
+                .name(product.getName())
+                .description(product.getDescription())
+                .category(product.getCategory())
+                .price(product.getPrice().doubleValue())
+                .stockQuantity(product.getStockQuantity())
+                .imageUrl(product.getImageUrl())
+                .build();
     }
 }

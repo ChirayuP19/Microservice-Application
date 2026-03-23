@@ -12,6 +12,6 @@ public interface ProductService {
     ProductResponse updateProduct(Long id, ProductRequest productRequest);
     Page<ProductResponse> getAllProducts(int page, int size);
     boolean deleteProduct(Long id);
-    List<ProductResponse> searchProducts(String keyword);
+    Page<ProductResponse> searchProducts(String keyword,int page, int size);
     Optional<ProductResponse> getProductById(Long productId);
 }

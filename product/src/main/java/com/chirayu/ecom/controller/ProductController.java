@@ -41,8 +41,10 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<ProductResponse>> searchProducts(@RequestParam String keyword){
-        return ResponseEntity.status(HttpStatus.OK).body(productService.searchProducts(keyword));
+    public ResponseEntity<Page<ProductResponse>> searchProducts(@RequestParam String keyword,
+                                                                @RequestParam(defaultValue = "0") int page,
+                                                                @RequestParam(defaultValue = "10") int size){
+        return ResponseEntity.status(HttpStatus.OK).body(productService.searchProducts(keyword,page,size));
     }
 
     @GetMapping("/{id}")
