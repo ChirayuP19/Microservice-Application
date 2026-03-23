@@ -6,14 +6,29 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/products/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ecomBreaker
+                fallbackUri: forward:/fallback/products
         - id: user-service
           uri: http://localhost:8082
           predicates:
             - Path=/api/v1/users/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ecomBreaker
+                fallbackUri: forward:/fallback/users
         - id: order-service
           uri: http://localhost:8083
           predicates:
             - Path=/api/v1/orders/**,/api/v1/cart/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ecomBreaker
+                fallbackUri: forward:/fallback/orders
         - id: eureka-server
           uri: http://localhost:8761
           predicates:
@@ -29,6 +44,12 @@ management:
     web:
       exposure:
         include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
   tracing:
     sampling:
       probability: 1.0
@@ -41,8 +62,6 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-server:
-  port: 8080
 logging:
   level:
     root: INFO
@@ -53,3 +72,17 @@ logging:
     rollingpolicy:
       max-file-size: 5MB
       max-history: 7
+resilience4j:
+  circuitbreaker:
+    instances:
+      ecomBreaker:
+        register-health-indicator: true
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        permitted-number-of-calls-in-half-open-state: 3
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        automatic-transition-from-open-to-half-open-enabled: true
+        sliding-window-type: COUNT_BASED
+server:
+  port: 8080
