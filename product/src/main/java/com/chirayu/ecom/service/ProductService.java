@@ -4,7 +4,6 @@ import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
 import org.springframework.data.domain.Page;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface ProductService {
@@ -14,4 +13,6 @@ public interface ProductService {
     boolean deleteProduct(Long id);
     Page<ProductResponse> searchProducts(String keyword,int page, int size);
     Optional<ProductResponse> getProductById(Long productId);
+    void reduceStock(Long productId, int quantity);
+    void restoreStock(Long productId, int quantity);
 }

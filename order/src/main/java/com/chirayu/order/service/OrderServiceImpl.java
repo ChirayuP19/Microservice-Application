@@ -1,7 +1,9 @@
 package com.chirayu.order.service;
 
 
+import com.chirayu.order.clients.ProductServiceClient;
 import com.chirayu.order.clients.UserServiceClient;
+import com.chirayu.order.dto.OrderEvent;
 import com.chirayu.order.dto.OrderItemDTO;
 import com.chirayu.order.dto.OrderResponse;
 import com.chirayu.order.dto.UserResponse;
@@ -11,11 +13,13 @@ import com.chirayu.order.entity.OrderItem;
 import com.chirayu.order.entity.OrderStatus;
 import com.chirayu.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +28,8 @@ public class OrderServiceImpl implements OrderService {
     private final CartService cartService;
     private final OrderRepository orderRepository;
     private final UserServiceClient userServiceClient;
+    private final ProductServiceClient productServiceClient;
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
 
     @Override
@@ -53,13 +59,24 @@ public class OrderServiceImpl implements OrderService {
                         item.getQuantity(),
                         item.getPrice(),
                         order
-                )).toList();
+                )).collect(Collectors.toList());
 
         order.setItems(orderItems);
         Order savedOrder = orderRepository.save(order);
 
         cartService.clearCart(userId);
+        savedOrder.getItems().forEach(item->productServiceClient.reduceStock(item.getProductId(),item.getQuantity()));
 
+        kafkaTemplate.send("order.placed",OrderEvent.builder()
+                .orderId(savedOrder.getId())
+                .userId(userId)
+                .userEmail(userDetails.getEmail())
+                .userName(userDetails.getFirstName() + " " + userDetails.getLastName())
+                .userPhone(userDetails.getPhone())
+                .totalAmount(savedOrder.getTotalAmount())
+                .status(savedOrder.getStatus().name())
+                .createdAt(savedOrder.getCreatedAt())
+                .build());
         return Optional.of(mapToOrderResponse(savedOrder));
     }
 

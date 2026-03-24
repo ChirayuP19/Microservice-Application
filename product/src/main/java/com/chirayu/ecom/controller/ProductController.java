@@ -2,6 +2,8 @@ package com.chirayu.ecom.controller;
 
 import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
+import com.chirayu.ecom.entity.Product;
+import com.chirayu.ecom.repository.ProductRepository;
 import com.chirayu.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -9,13 +11,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/products")
 public class ProductController {
+    
     private final ProductService productService;
+    private final ProductRepository productRepository;
 
     @PostMapping("")
     public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest productRequest){
@@ -53,4 +55,29 @@ public class ProductController {
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
+
+    @PatchMapping("/{productId}/reduce-stock")
+    public ResponseEntity<Void> reduceStock(
+            @PathVariable("productId") Long productId,
+            @RequestParam int quantity){
+
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        if (product.getStockQuantity() < quantity) {
+            return ResponseEntity.badRequest().build();
+        }
+        product.setStockQuantity(product.getStockQuantity() - quantity);
+        productRepository.save(product);
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping("/{productId}/restore-stock")
+    public ResponseEntity<Void> restoreStock(
+            @PathVariable Long productId,
+            @RequestParam int quantity) {
+        productService.restoreStock(productId, quantity);
+        return ResponseEntity.ok().build();
+    }
+
 }

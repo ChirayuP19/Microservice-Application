@@ -91,6 +91,8 @@ services:
     container_name: redis_container
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
     restart: unless-stopped
 
   elasticsearch:
@@ -102,7 +104,54 @@ services:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     ports:
       - "9200:9200"
-    restart: on-failure
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    restart: unless-stopped
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka_container
+    environment:
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+    ports:
+      - "9092:9092"
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+    depends_on:
+      - zookeeper
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: zookeeper_container
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  mail-dev:
+    container_name: mail_container
+    image: maildev/maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    networks:
+      - postgres
+    restart: unless-stopped
 
 networks:
   postgres:
@@ -113,3 +162,7 @@ volumes:
   pgadmin:
   mongo:
   rabbitmq_data:
+  redis_data:
+  elasticsearch_data:
+  zookeeper_data:
+  kafka_data:

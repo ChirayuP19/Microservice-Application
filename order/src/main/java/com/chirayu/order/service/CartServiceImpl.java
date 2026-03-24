@@ -43,7 +43,7 @@ public class CartServiceImpl implements CartService {
         CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID, request.getProductId());
         if (exsistingCartItem != null) {
             exsistingCartItem.setQuantity(exsistingCartItem.getQuantity() + request.getQuantity());
-            exsistingCartItem.setPrice(BigDecimal.valueOf(1000));
+            exsistingCartItem.setPrice(productOpt.getPrice().multiply(BigDecimal.valueOf(request.getQuantity())));
             cartItemRepository.save(exsistingCartItem);
         } else {
 
@@ -51,7 +51,7 @@ public class CartServiceImpl implements CartService {
             cartItem.setProductId(request.getProductId());
             cartItem.setUserId(userID);
             cartItem.setQuantity(request.getQuantity());
-            cartItem.setPrice(BigDecimal.valueOf(1000));
+            cartItem.setPrice(productOpt.getPrice().multiply(BigDecimal.valueOf(request.getQuantity())));
             cartItemRepository.save(cartItem);
         }
         return true;

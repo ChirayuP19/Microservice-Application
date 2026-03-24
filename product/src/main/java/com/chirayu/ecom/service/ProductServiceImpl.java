@@ -10,12 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -80,6 +80,34 @@ public class ProductServiceImpl implements ProductService{
     public Optional<ProductResponse> getProductById(Long productId) {
         return productRepository.findByIdAndActiveTrue(productId)
                 .map(this::mapToProductResponse);
+    }
+
+    @Override
+    public void reduceStock(Long productId, int quantity) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Product not found with id: " + productId));
+
+        if (product.getStockQuantity() < quantity) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, "Insufficient stock for product: " + productId);
+        }
+
+        product.setStockQuantity(product.getStockQuantity() - quantity);
+        Product savedProduct = productRepository.save(product);
+
+        productSearchRepository.save(mapToProductDocument(savedProduct));
+    }
+
+    @Override
+    public void restoreStock(Long productId, int quantity) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ResponseStatusException
+                        (HttpStatus.NOT_FOUND, "Product not found with id: " + productId));
+
+        product.setStockQuantity(product.getStockQuantity()+quantity);
+        Product save = productRepository.save(product);
+        productSearchRepository.save(mapToProductDocument(save));
     }
 
     private ProductResponse mapToProductResponse(Product saveProduct) {
