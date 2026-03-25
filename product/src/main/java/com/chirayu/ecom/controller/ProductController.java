@@ -3,6 +3,7 @@ package com.chirayu.ecom.controller;
 import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
 import com.chirayu.ecom.entity.Product;
+import com.chirayu.ecom.helper.Helper;
 import com.chirayu.ecom.repository.ProductRepository;
 import com.chirayu.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -78,6 +82,17 @@ public class ProductController {
             @RequestParam int quantity) {
         productService.restoreStock(productId, quantity);
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/bulk-upload")
+    public ResponseEntity<?> bulkUpload(@RequestParam("file")MultipartFile file){
+
+        if ( Helper.checkFileContentType(file)) {
+            productService.saveFromExcel(file);
+
+            return ResponseEntity.ok(Map.of("message","File is uploaded and data is saved to database."));
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload excel file :");
     }
 
 }

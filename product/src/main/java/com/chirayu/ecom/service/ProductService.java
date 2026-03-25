@@ -3,6 +3,7 @@ package com.chirayu.ecom.service;
 import com.chirayu.ecom.dto.ProductRequest;
 import com.chirayu.ecom.dto.ProductResponse;
 import org.springframework.data.domain.Page;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 
@@ -15,4 +16,5 @@ public interface ProductService {
     Optional<ProductResponse> getProductById(Long productId);
     void reduceStock(Long productId, int quantity);
     void restoreStock(Long productId, int quantity);
+    void saveFromExcel(MultipartFile file);
 }

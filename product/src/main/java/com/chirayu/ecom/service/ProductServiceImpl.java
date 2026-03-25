@@ -5,6 +5,7 @@ import com.chirayu.ecom.dto.ProductResponse;
 import com.chirayu.ecom.elasticsearch.ProductDocument;
 import com.chirayu.ecom.elasticsearch.ProductSearchRepository;
 import com.chirayu.ecom.entity.Product;
+import com.chirayu.ecom.helper.Helper;
 import com.chirayu.ecom.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -13,9 +14,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -108,6 +112,21 @@ public class ProductServiceImpl implements ProductService{
         product.setStockQuantity(product.getStockQuantity()+quantity);
         Product save = productRepository.save(product);
         productSearchRepository.save(mapToProductDocument(save));
+    }
+
+    @Override
+    public void saveFromExcel(MultipartFile file) {
+        try {
+            List<Product> products = Helper.convertExcelToListOfProduct(file.getInputStream());
+            List<Product> saveProduct = productRepository.saveAll(products);
+            List<ProductDocument> documents = saveProduct.stream()
+                    .map(this::mapToProductDocument)
+                    .toList();
+            productSearchRepository.saveAll(documents);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private ProductResponse mapToProductResponse(Product saveProduct) {

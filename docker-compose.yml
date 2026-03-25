@@ -153,6 +153,24 @@ services:
       - postgres
     restart: unless-stopped
 
+  keycloak:
+    container_name: keycloak_container
+    image: quay.io/keycloak/keycloak:24.0.2
+    ports:
+      - "8443:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT: false
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_HTTP_ENABLED: true
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+    networks:
+      postgres:
+    command:
+      - "start-dev"
+
 networks:
   postgres:
     driver: bridge
@@ -166,3 +184,4 @@ volumes:
   elasticsearch_data:
   zookeeper_data:
   kafka_data:
+  keycloak_data:
