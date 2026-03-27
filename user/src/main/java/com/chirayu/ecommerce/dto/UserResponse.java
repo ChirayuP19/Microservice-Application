@@ -10,7 +10,7 @@ public class UserResponse {
     private String lastName;
     private String email;
     private String phone;
-
+    private String keycloakId;
     private UserRole role;
     private AddressDTO addressDTO;
 }
