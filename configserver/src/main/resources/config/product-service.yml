@@ -46,5 +46,11 @@ logging:
     rollingpolicy:
       max-file-size: 5MB
       max-history: 7
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
 server:
   port: 8081

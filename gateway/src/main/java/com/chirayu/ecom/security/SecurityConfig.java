@@ -28,6 +28,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeExchange(exchange ->
                         exchange
+                                .pathMatchers(
+                                        "/swagger-ui.html",
+                                        "/swagger-ui/**",
+                                        "/api-docs/**",
+                                        "/v3/api-docs/**",
+                                        "/webjars/**"
+                                ).permitAll()
                                 .pathMatchers("/api/v1/products/**").hasAnyRole("CUSTOMER","ADMIN")
                                 .pathMatchers("/api/v1/orders/**").hasAnyRole("CUSTOMER","ADMIN")
                                 .pathMatchers("/api/v1/cart/**").hasAnyRole("CUSTOMER","ADMIN")
