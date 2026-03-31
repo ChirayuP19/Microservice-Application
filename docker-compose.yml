@@ -191,8 +191,8 @@ services:
     restart: unless-stopped
 
   config-server:
-    build: ./configserver
     container_name: configserver_container
+    image: chirayupatel19/config-server:latest
     ports:
       - "8888:8888"
     depends_on:
@@ -218,7 +218,7 @@ services:
     restart: unless-stopped
 
   eureka:
-    build: ./eureka
+    image: chirayupatel19/eureka:latest
     container_name: eureka
     ports:
       - "8761:8761"
@@ -238,7 +238,7 @@ services:
     restart: unless-stopped
 
   gateway-service:
-    build: ./gateway
+    image: chirayupatel19/gateway-service:latest
     container_name: gateway
     ports:
       - "8080:8080"
@@ -259,7 +259,7 @@ services:
     restart: unless-stopped
 
   user-service:
-    build: ./user
+    image: chirayupatel19/user-service:latest
     container_name: user
     ports:
       - "8082:8082"
@@ -284,7 +284,7 @@ services:
     restart: unless-stopped
 
   product-service:
-    build: ./product
+    image: chirayupatel19/product-service:latest
     container_name: product
     ports:
       - "8081:8081"
@@ -312,7 +312,7 @@ services:
     restart: unless-stopped
 
   order-service:
-    build: ./order
+    image: chirayupatel19/order-service:latest
     container_name: order
     ports:
       - "8083:8083"
@@ -340,7 +340,7 @@ services:
     restart: unless-stopped
 
   notification-service:
-    build: ./notification
+    image: chirayupatel19/notification-service:latest
     container_name: notification
     ports:
       - "8084:8084"
