@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:/config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8888

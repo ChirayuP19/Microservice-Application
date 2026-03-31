@@ -71,7 +71,7 @@ public class OrderServiceImpl implements OrderService {
                 .orderId(savedOrder.getId())
                 .userId(userId)
                 .userEmail(userDetails.getEmail())
-                .userName(userDetails.getFirstName() + " " + userDetails.getLastName())
+                .userName(userDetails.getFirstName()+ " " +userDetails.getLastName())
                 .userPhone(userDetails.getPhone())
                 .totalAmount(savedOrder.getTotalAmount())
                 .status(savedOrder.getStatus().name())
