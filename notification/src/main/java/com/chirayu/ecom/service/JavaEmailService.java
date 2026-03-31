@@ -15,6 +15,8 @@ public class JavaEmailService {
     private final JavaMailSender mailSender;
 
     public void sendOrderConfirmationEmail(OrderEvent event) {
+
+
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(event.getUserEmail());

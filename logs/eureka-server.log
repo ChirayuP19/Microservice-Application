@@ -1,28 +1,57 @@
-2026-03-26T00:00:53.169-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T00:02:52.941-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T00:03:52.945-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:04:52.879-04:00  INFO 5688 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
-2026-03-26T00:04:52.950-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:05:52.954-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:06:52.959-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:07:52.964-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:08:24.530-04:00  INFO 5688 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=false)
-2026-03-26T00:08:25.013-04:00  INFO 5688 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=false)
-2026-03-26T00:08:25.038-04:00  INFO 5688 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=true)
-2026-03-26T00:08:25.038-04:00  INFO 5688 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=true)
-2026-03-26T00:08:52.968-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:09:52.973-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T00:10:52.976-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T00:11:52.981-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T00:12:52.986-04:00  INFO 5688 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T00:13:39.636-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
-2026-03-26T00:13:39.639-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-26T00:13:39.644-04:00  INFO 5688 --- [eureka-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-26T00:13:39.651-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2026-03-26T00:13:39.651-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T00:13:39.653-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T00:13:39.653-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2026-03-26T00:13:39.653-04:00 ERROR 5688 --- [eureka-server] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+2026-03-28T14:52:25.581-04:00  INFO 3752 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Starting EurekaApplication using Java 21.0.10 with PID 3752 (/Users/chirayu/Documents/E-com-micro/eureka/target/classes started by chirayu in /Users/chirayu/Documents/E-com-micro)
+2026-03-28T14:52:25.582-04:00 DEBUG 3752 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-28T14:52:25.583-04:00  INFO 3752 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T14:52:25.593-04:00  INFO 3752 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2026-03-28T14:52:25.593-04:00  INFO 3752 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=eureka-server, profiles=[default], label=null, version=null, state=null
+2026-03-28T14:52:25.868-04:00  INFO 3752 --- [eureka-server] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9053bbfe-f471-3904-bf94-fc7f503ca19e
+2026-03-28T14:52:25.942-04:00  INFO 3752 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+2026-03-28T14:52:25.946-04:00  INFO 3752 --- [eureka-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-28T14:52:25.947-04:00  INFO 3752 --- [eureka-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-03-28T14:52:25.962-04:00  INFO 3752 --- [eureka-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-28T14:52:25.962-04:00  INFO 3752 --- [eureka-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 369 ms
+2026-03-28T14:52:26.199-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-03-28T14:52:26.199-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2026-03-28T14:52:26.249-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-03-28T14:52:26.249-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-03-28T14:52:26.288-04:00  INFO 3752 --- [eureka-server] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-03-28T14:52:26.464-04:00  WARN 3752 --- [eureka-server] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-03-28T14:52:26.469-04:00  INFO 3752 --- [eureka-server] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-03-28T14:52:26.474-04:00  INFO 3752 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-03-28T14:52:26.474-04:00  INFO 3752 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2026-03-28T14:52:26.475-04:00  INFO 3752 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1774723946475 with initial instances count: 0
+2026-03-28T14:52:26.486-04:00  INFO 3752 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2026-03-28T14:52:26.486-04:00  INFO 3752 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2026-03-28T14:52:26.518-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-03-28T14:52:26.518-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2026-03-28T14:52:26.518-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-03-28T14:52:26.518-04:00  INFO 3752 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-03-28T14:52:26.528-04:00  INFO 3752 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2026-03-28T14:52:26.531-04:00  INFO 3752 --- [eureka-server] [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2026-03-28T14:52:26.531-04:00  INFO 3752 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2026-03-28T14:52:26.534-04:00  INFO 3752 --- [eureka-server] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-28T14:52:26.546-04:00  INFO 3752 --- [eureka-server] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2026-03-28T14:52:26.549-04:00  INFO 3752 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2026-03-28T14:52:26.549-04:00  INFO 3752 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2026-03-28T14:52:26.549-04:00  INFO 3752 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2026-03-28T14:52:26.549-04:00  INFO 3752 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2026-03-28T14:52:26.549-04:00  INFO 3752 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2026-03-28T14:52:26.550-04:00  INFO 3752 --- [eureka-server] [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2026-03-28T14:52:26.552-04:00  INFO 3752 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
+2026-03-28T14:52:26.552-04:00  INFO 3752 --- [eureka-server] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2026-03-28T14:52:26.558-04:00  INFO 3752 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Started EurekaApplication in 1.278 seconds (process running for 1.492)
+2026-03-28T14:52:30.130-04:00  INFO 3752 --- [eureka-server] [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-28T14:52:30.131-04:00  INFO 3752 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-28T14:52:30.132-04:00  INFO 3752 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-28T14:52:35.917-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
+2026-03-28T14:52:35.918-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-28T14:52:35.919-04:00  INFO 3752 --- [eureka-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-03-28T14:52:35.920-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2026-03-28T14:52:35.920-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2026-03-28T14:52:35.921-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2026-03-28T14:52:35.921-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2026-03-28T14:52:35.921-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2026-03-28T14:52:35.921-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2026-03-28T14:52:35.921-04:00 ERROR 3752 --- [eureka-server] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
 
 java.lang.IllegalStateException: Client instance has been closed.
 	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
@@ -37,518 +66,5 @@ java.lang.IllegalStateException: Client instance has been closed.
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2026-03-26T00:13:39.657-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T00:13:39.657-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T00:13:39.658-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-03-26T00:13:39.658-04:00  INFO 5688 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-03-26T15:15:18.629-04:00  INFO 2383 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Starting EurekaApplication using Java 21.0.10 with PID 2383 (/Users/chirayu/Documents/E-com-micro/eureka/target/classes started by chirayu in /Users/chirayu/Documents/E-com-micro)
-2026-03-26T15:15:18.629-04:00 DEBUG 2383 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Running with Spring Boot v3.4.3, Spring v6.2.3
-2026-03-26T15:15:18.630-04:00  INFO 2383 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : No active profile set, falling back to 1 default profile: "default"
-2026-03-26T15:15:18.638-04:00  INFO 2383 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-03-26T15:15:18.638-04:00  INFO 2383 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=eureka-server, profiles=[default], label=null, version=null, state=null
-2026-03-26T15:15:18.872-04:00  INFO 2383 --- [eureka-server] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9053bbfe-f471-3904-bf94-fc7f503ca19e
-2026-03-26T15:15:18.941-04:00  INFO 2383 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
-2026-03-26T15:15:18.945-04:00  INFO 2383 --- [eureka-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-26T15:15:18.945-04:00  INFO 2383 --- [eureka-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2026-03-26T15:15:18.958-04:00  INFO 2383 --- [eureka-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-26T15:15:18.958-04:00  INFO 2383 --- [eureka-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
-2026-03-26T15:15:19.194-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-26T15:15:19.194-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-26T15:15:19.244-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-26T15:15:19.244-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-26T15:15:19.282-04:00  INFO 2383 --- [eureka-server] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2026-03-26T15:15:19.442-04:00  WARN 2383 --- [eureka-server] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-03-26T15:15:19.448-04:00  INFO 2383 --- [eureka-server] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-03-26T15:15:19.454-04:00  INFO 2383 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-03-26T15:15:19.454-04:00  INFO 2383 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2026-03-26T15:15:19.454-04:00  INFO 2383 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1774552519454 with initial instances count: 0
-2026-03-26T15:15:19.466-04:00  INFO 2383 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2026-03-26T15:15:19.466-04:00  INFO 2383 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2026-03-26T15:15:19.495-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-26T15:15:19.495-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-26T15:15:19.495-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-26T15:15:19.495-04:00  INFO 2383 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-26T15:15:19.506-04:00  INFO 2383 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2026-03-26T15:15:19.509-04:00  INFO 2383 --- [eureka-server] [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2026-03-26T15:15:19.510-04:00  INFO 2383 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2026-03-26T15:15:19.513-04:00  INFO 2383 --- [eureka-server] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-03-26T15:15:19.525-04:00  INFO 2383 --- [eureka-server] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
-2026-03-26T15:15:19.528-04:00  INFO 2383 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2026-03-26T15:15:19.529-04:00  INFO 2383 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2026-03-26T15:15:19.529-04:00  INFO 2383 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2026-03-26T15:15:19.529-04:00  INFO 2383 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2026-03-26T15:15:19.529-04:00  INFO 2383 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2026-03-26T15:15:19.529-04:00  INFO 2383 --- [eureka-server] [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2026-03-26T15:15:19.531-04:00  INFO 2383 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
-2026-03-26T15:15:19.531-04:00  INFO 2383 --- [eureka-server] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2026-03-26T15:15:19.539-04:00  INFO 2383 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Started EurekaApplication in 1.187 seconds (process running for 1.374)
-2026-03-26T15:15:23.803-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-26T15:15:23.804-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-26T15:15:23.804-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-03-26T15:15:23.861-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:15:24.437-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:15:29.596-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T15:15:30.114-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T15:16:19.532-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T15:16:51.161-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T15:16:51.676-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T15:16:57.275-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T15:16:57.780-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T15:16:57.780-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T15:16:57.781-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T15:16:57.781-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T15:16:59.796-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T15:17:00.306-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T15:17:19.535-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:18:19.537-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:19:19.539-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:20:19.542-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T15:21:19.545-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:22:19.546-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T15:23:19.549-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T15:24:19.552-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:25:19.555-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:26:19.556-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:27:19.559-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T15:28:19.559-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:29:19.562-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:29:23.904-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T15:29:24.418-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T15:29:29.450-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T15:29:29.958-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T15:29:29.958-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T15:29:29.959-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T15:29:29.959-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T15:29:31.997-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T15:29:32.512-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T15:30:19.518-04:00  INFO 2383 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2026-03-26T15:30:19.595-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:30:58.730-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T15:30:59.242-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T15:31:04.525-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T15:31:05.029-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T15:31:05.029-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:31:05.030-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-26T15:31:05.030-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-26T15:31:06.911-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:31:07.421-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:31:19.607-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T15:31:59.738-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T15:32:00.243-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T15:32:06.291-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T15:32:06.804-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T15:32:06.804-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:32:06.804-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-26T15:32:06.804-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-26T15:32:08.597-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:32:09.105-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:32:19.607-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:33:19.610-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:34:19.610-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:34:20.835-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T15:34:21.350-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T15:34:27.236-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T15:34:27.747-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T15:34:27.747-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:34:27.747-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-26T15:34:27.748-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-26T15:34:29.429-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:34:29.943-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:35:19.613-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:36:19.615-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:37:19.615-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T15:48:50.495-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T15:48:50.498-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=2, evictionLimit=1)
-2026-03-26T15:48:50.498-04:00  WARN 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T15:48:50.498-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T15:49:00.389-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:49:00.390-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Renew): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:49:00.427-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:49:00.939-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:49:50.498-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T15:50:24.218-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T15:50:24.730-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T15:50:29.769-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T15:50:30.282-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T15:50:30.282-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T15:50:30.282-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-26T15:50:30.283-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-26T15:50:32.390-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T15:50:32.906-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T15:50:34.929-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T15:50:35.437-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T15:50:40.382-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T15:50:40.894-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T15:50:40.895-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T15:50:40.895-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-13] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T15:50:40.895-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-13] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T15:50:42.430-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T15:50:42.941-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T15:50:50.499-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:51:50.500-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:52:50.501-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:53:50.502-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:54:50.506-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:55:50.388-04:00  INFO 2383 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2026-03-26T15:55:50.508-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T15:56:50.509-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T15:57:50.509-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T15:58:50.513-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T15:59:50.515-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:00:50.517-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:01:50.521-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T16:02:50.521-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T16:03:50.523-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:04:50.523-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T16:05:50.526-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T16:06:20.252-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T16:06:20.767-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T16:06:37.601-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T16:06:38.117-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T16:06:39.860-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:06:40.367-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:06:45.451-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:06:45.953-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:06:45.953-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:06:45.954-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:06:45.954-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:06:47.564-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:06:48.078-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T16:06:50.530-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T16:07:50.532-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:08:50.537-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:09:28.249-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-26T16:09:28.763-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-26T16:09:34.391-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-26T16:09:34.894-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-26T16:09:34.894-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-26T16:09:34.894-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-26T16:09:34.894-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-26T16:09:50.566-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:10:50.410-04:00  INFO 2383 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2026-03-26T16:10:50.573-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:11:50.575-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:12:50.580-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T16:13:50.580-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T16:14:50.582-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:15:50.587-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:16:50.592-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:17:26.100-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T16:17:26.613-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T16:17:33.045-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:17:33.549-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:17:38.277-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:17:38.782-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:17:38.782-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:17:38.783-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-2] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:17:38.783-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-2] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:17:42.653-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:17:42.702-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:17:43.215-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:17:48.807-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:17:49.316-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:17:49.316-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:17:49.317-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:17:49.317-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:17:50.549-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:17:50.593-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T16:17:51.062-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T16:18:50.598-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:19:50.601-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:20:50.606-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T16:21:50.610-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T16:22:06.706-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=false)
-2026-03-26T16:22:07.220-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=true)
-2026-03-26T16:22:26.062-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:22:26.565-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:22:31.388-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:22:31.897-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:22:31.897-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:22:31.898-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:22:31.898-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:22:33.559-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:22:34.065-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T16:22:50.610-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T16:23:50.611-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T16:24:20.115-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:24:20.629-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:24:25.294-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:24:25.799-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:24:25.799-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:24:25.800-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:24:25.800-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:24:27.684-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:24:28.194-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T16:24:50.616-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T16:25:50.411-04:00  INFO 2383 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
-2026-03-26T16:25:50.621-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:26:50.626-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T16:27:13.415-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T16:27:13.925-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T16:27:18.764-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T16:27:19.269-04:00  WARN 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T16:27:19.270-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T16:27:19.270-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-2] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T16:27:19.270-04:00  WARN 2383 --- [eureka-server] [TaskBatchingWorker-target_localhost-2] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T16:27:21.229-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T16:27:21.733-04:00  INFO 2383 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T16:27:50.629-04:00  INFO 2383 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T16:28:15.746-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
-2026-03-26T16:28:15.747-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-26T16:28:15.749-04:00  INFO 2383 --- [eureka-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-26T16:28:15.752-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2026-03-26T16:28:15.752-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T16:28:15.755-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T16:28:15.755-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2026-03-26T16:28:15.756-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T16:28:15.756-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T16:28:15.754-04:00 ERROR 2383 --- [eureka-server] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
-
-java.lang.IllegalStateException: Client instance has been closed.
-	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.10.jar:na]
-	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338) ~[eureka-client-jersey3-2.0.4.jar:2.0.4]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2026-03-26T16:28:15.758-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-03-26T16:28:15.758-04:00  INFO 2383 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-03-26T21:12:45.453-04:00  INFO 1366 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Starting EurekaApplication using Java 21.0.10 with PID 1366 (/Users/chirayu/Documents/E-com-micro/eureka/target/classes started by chirayu in /Users/chirayu/Documents/E-com-micro)
-2026-03-26T21:12:45.454-04:00 DEBUG 1366 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Running with Spring Boot v3.4.3, Spring v6.2.3
-2026-03-26T21:12:45.454-04:00  INFO 1366 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : No active profile set, falling back to 1 default profile: "default"
-2026-03-26T21:12:45.462-04:00  INFO 1366 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-03-26T21:12:45.462-04:00  INFO 1366 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=eureka-server, profiles=[default], label=null, version=null, state=null
-2026-03-26T21:12:45.692-04:00  INFO 1366 --- [eureka-server] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9053bbfe-f471-3904-bf94-fc7f503ca19e
-2026-03-26T21:12:45.773-04:00  INFO 1366 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
-2026-03-26T21:12:45.777-04:00  INFO 1366 --- [eureka-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-26T21:12:45.777-04:00  INFO 1366 --- [eureka-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2026-03-26T21:12:45.791-04:00  INFO 1366 --- [eureka-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-26T21:12:45.791-04:00  INFO 1366 --- [eureka-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 329 ms
-2026-03-26T21:12:46.039-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-26T21:12:46.040-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-26T21:12:46.091-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-26T21:12:46.091-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-26T21:12:46.125-04:00  INFO 1366 --- [eureka-server] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2026-03-26T21:12:46.321-04:00  WARN 1366 --- [eureka-server] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-03-26T21:12:46.327-04:00  INFO 1366 --- [eureka-server] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-03-26T21:12:46.333-04:00  INFO 1366 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-03-26T21:12:46.333-04:00  INFO 1366 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2026-03-26T21:12:46.333-04:00  INFO 1366 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1774573966333 with initial instances count: 0
-2026-03-26T21:12:46.345-04:00  INFO 1366 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2026-03-26T21:12:46.345-04:00  INFO 1366 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2026-03-26T21:12:46.377-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-26T21:12:46.377-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-26T21:12:46.377-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-26T21:12:46.377-04:00  INFO 1366 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-26T21:12:46.389-04:00  INFO 1366 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2026-03-26T21:12:46.393-04:00  INFO 1366 --- [eureka-server] [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2026-03-26T21:12:46.393-04:00  INFO 1366 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2026-03-26T21:12:46.396-04:00  INFO 1366 --- [eureka-server] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-03-26T21:12:46.410-04:00  INFO 1366 --- [eureka-server] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
-2026-03-26T21:12:46.414-04:00  INFO 1366 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2026-03-26T21:12:46.414-04:00  INFO 1366 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2026-03-26T21:12:46.415-04:00  INFO 1366 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2026-03-26T21:12:46.415-04:00  INFO 1366 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2026-03-26T21:12:46.415-04:00  INFO 1366 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2026-03-26T21:12:46.415-04:00  INFO 1366 --- [eureka-server] [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2026-03-26T21:12:46.417-04:00  INFO 1366 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
-2026-03-26T21:12:46.418-04:00  INFO 1366 --- [eureka-server] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2026-03-26T21:12:46.424-04:00  INFO 1366 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Started EurekaApplication in 1.266 seconds (process running for 1.453)
-2026-03-26T21:12:50.093-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-26T21:12:50.093-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-26T21:12:50.094-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-03-26T21:12:50.155-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-26T21:12:50.725-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-26T21:12:53.383-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T21:12:53.895-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T21:13:46.416-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T21:14:46.420-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:15:22.456-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=false)
-2026-03-26T21:15:22.969-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=true)
-2026-03-26T21:15:24.727-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T21:15:25.232-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T21:15:30.444-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T21:15:30.947-04:00  WARN 1366 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T21:15:30.947-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T21:15:30.948-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-8] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T21:15:30.948-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-8] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T21:15:32.613-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T21:15:33.122-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T21:15:46.425-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T21:16:14.013-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=false)
-2026-03-26T21:16:14.078-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=false)
-2026-03-26T21:16:14.525-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=true)
-2026-03-26T21:16:14.525-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=true)
-2026-03-26T21:16:20.165-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T21:16:20.678-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T21:16:25.997-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T21:16:26.508-04:00  WARN 1366 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T21:16:26.508-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T21:16:26.508-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T21:16:26.508-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T21:16:28.175-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T21:16:28.689-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T21:16:46.428-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T21:17:46.431-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T21:18:46.431-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T21:19:46.435-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:20:42.553-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=false)
-2026-03-26T21:20:43.064-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status DOWN (replication=true)
-2026-03-26T21:20:46.435-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T21:20:47.781-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 (replication=false)
-2026-03-26T21:20:48.292-04:00  WARN 1366 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/192.168.40.96:gateway-service:8080
-2026-03-26T21:20:48.293-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - 192.168.40.96:gateway-service:8080
-2026-03-26T21:20:48.293-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost failed with response code 404
-2026-03-26T21:20:48.294-04:00  WARN 1366 --- [eureka-server] [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/192.168.40.96:gateway-service:8080:Cancel@localhost: missing entry.
-2026-03-26T21:20:50.369-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=false)
-2026-03-26T21:20:50.822-04:00  INFO 1366 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.40.96:gateway-service:8080 with status UP (replication=true)
-2026-03-26T21:21:46.436-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-26T21:22:46.437-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T21:23:46.438-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T21:24:46.442-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:25:46.442-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 113ms
-2026-03-26T21:26:46.443-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2026-03-26T21:30:15.439-04:00  INFO 1366 --- [eureka-server] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 10
-2026-03-26T21:30:15.609-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:31:15.617-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T21:32:15.617-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T21:33:15.621-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:34:15.623-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T21:35:15.624-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-26T21:36:15.626-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T21:37:15.628-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T21:38:15.631-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:39:15.635-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-26T21:40:15.637-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-26T21:41:15.641-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T21:42:15.645-04:00  INFO 1366 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2026-03-26T21:46:09.445-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
-2026-03-26T21:46:09.450-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-26T21:46:09.455-04:00  INFO 1366 --- [eureka-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-26T21:46:09.462-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2026-03-26T21:46:09.462-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T21:46:09.464-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T21:46:09.466-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2026-03-26T21:46:09.466-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-26T21:46:09.466-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-26T21:46:09.463-04:00 ERROR 1366 --- [eureka-server] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
-
-java.lang.IllegalStateException: Client instance has been closed.
-	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.10.jar:na]
-	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338) ~[eureka-client-jersey3-2.0.4.jar:2.0.4]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2026-03-26T21:46:09.469-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-03-26T21:46:09.469-04:00  INFO 1366 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-03-27T00:23:10.726-04:00  INFO 3381 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Starting EurekaApplication using Java 21.0.10 with PID 3381 (/Users/chirayu/Documents/E-com-micro/eureka/target/classes started by chirayu in /Users/chirayu/Documents/E-com-micro)
-2026-03-27T00:23:10.727-04:00 DEBUG 3381 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Running with Spring Boot v3.4.3, Spring v6.2.3
-2026-03-27T00:23:10.727-04:00  INFO 3381 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : No active profile set, falling back to 1 default profile: "default"
-2026-03-27T00:23:10.735-04:00  INFO 3381 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-03-27T00:23:10.735-04:00  INFO 3381 --- [eureka-server] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=eureka-server, profiles=[default], label=null, version=null, state=null
-2026-03-27T00:23:10.957-04:00  INFO 3381 --- [eureka-server] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9053bbfe-f471-3904-bf94-fc7f503ca19e
-2026-03-27T00:23:11.027-04:00  INFO 3381 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
-2026-03-27T00:23:11.030-04:00  INFO 3381 --- [eureka-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-27T00:23:11.031-04:00  INFO 3381 --- [eureka-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2026-03-27T00:23:11.044-04:00  INFO 3381 --- [eureka-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-27T00:23:11.044-04:00  INFO 3381 --- [eureka-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 309 ms
-2026-03-27T00:23:11.280-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-27T00:23:11.281-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-27T00:23:11.329-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-27T00:23:11.329-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-27T00:23:11.363-04:00  INFO 3381 --- [eureka-server] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2026-03-27T00:23:11.522-04:00  WARN 3381 --- [eureka-server] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-03-27T00:23:11.528-04:00  INFO 3381 --- [eureka-server] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-03-27T00:23:11.534-04:00  INFO 3381 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-03-27T00:23:11.534-04:00  INFO 3381 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2026-03-27T00:23:11.534-04:00  INFO 3381 --- [eureka-server] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1774585391534 with initial instances count: 0
-2026-03-27T00:23:11.546-04:00  INFO 3381 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2026-03-27T00:23:11.546-04:00  INFO 3381 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2026-03-27T00:23:11.575-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2026-03-27T00:23:11.575-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2026-03-27T00:23:11.575-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2026-03-27T00:23:11.575-04:00  INFO 3381 --- [eureka-server] [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2026-03-27T00:23:11.589-04:00  INFO 3381 --- [eureka-server] [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2026-03-27T00:23:11.593-04:00  INFO 3381 --- [eureka-server] [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2026-03-27T00:23:11.593-04:00  INFO 3381 --- [eureka-server] [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2026-03-27T00:23:11.596-04:00  INFO 3381 --- [eureka-server] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-03-27T00:23:11.609-04:00  INFO 3381 --- [eureka-server] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
-2026-03-27T00:23:11.612-04:00  INFO 3381 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2026-03-27T00:23:11.612-04:00  INFO 3381 --- [eureka-server] [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2026-03-27T00:23:11.612-04:00  INFO 3381 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2026-03-27T00:23:11.613-04:00  INFO 3381 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2026-03-27T00:23:11.613-04:00  INFO 3381 --- [eureka-server] [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2026-03-27T00:23:11.613-04:00  INFO 3381 --- [eureka-server] [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2026-03-27T00:23:11.615-04:00  INFO 3381 --- [eureka-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
-2026-03-27T00:23:11.615-04:00  INFO 3381 --- [eureka-server] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2026-03-27T00:23:11.622-04:00  INFO 3381 --- [eureka-server] [main] com.chirayu.ecom.EurekaApplication       : Started EurekaApplication in 1.175 seconds (process running for 1.356)
-2026-03-27T00:23:16.244-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-27T00:23:16.244-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-27T00:23:16.244-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-03-27T00:23:16.307-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-27T00:23:16.888-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-27T00:24:11.618-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-27T00:25:11.620-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2026-03-27T00:26:11.624-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-27T00:26:56.414-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=false)
-2026-03-27T00:26:56.927-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status DOWN (replication=true)
-2026-03-27T00:27:02.340-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/192.168.40.96:user-service:8082 (replication=false)
-2026-03-27T00:27:02.853-04:00  WARN 3381 --- [eureka-server] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/192.168.40.96:user-service:8082
-2026-03-27T00:27:02.853-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - 192.168.40.96:user-service:8082
-2026-03-27T00:27:02.854-04:00  WARN 3381 --- [eureka-server] [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost failed with response code 404
-2026-03-27T00:27:02.854-04:00  WARN 3381 --- [eureka-server] [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/192.168.40.96:user-service:8082:Cancel@localhost: missing entry.
-2026-03-27T00:27:05.375-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=false)
-2026-03-27T00:27:05.894-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/192.168.40.96:user-service:8082 with status UP (replication=true)
-2026-03-27T00:27:11.625-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-27T00:28:11.630-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-27T00:29:11.634-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-27T00:30:11.638-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2026-03-27T00:31:11.639-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2026-03-27T00:31:34.596-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=false)
-2026-03-27T00:31:35.106-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUCT-SERVICE/192.168.40.96:product-service:8081 with status UP (replication=true)
-2026-03-27T00:31:39.381-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=false)
-2026-03-27T00:31:39.893-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDER-SERVICE/192.168.40.96:order-service:8083 with status UP (replication=true)
-2026-03-27T00:31:40.711-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=false)
-2026-03-27T00:31:41.220-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status UP (replication=true)
-2026-03-27T00:32:11.644-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-27T00:33:11.650-04:00  INFO 3381 --- [eureka-server] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2026-03-27T00:33:17.365-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
-2026-03-27T00:33:17.366-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-27T00:33:17.368-04:00  INFO 3381 --- [eureka-server] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.40.96:notification-service:8084 with status DOWN (replication=false)
-2026-03-27T00:33:17.421-04:00  INFO 3381 --- [eureka-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-27T00:33:17.423-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2026-03-27T00:33:17.423-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-27T00:33:17.424-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-27T00:33:17.424-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2026-03-27T00:33:17.423-04:00 ERROR 3381 --- [eureka-server] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
-
-java.lang.IllegalStateException: Client instance has been closed.
-	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.10.jar:na]
-	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.10.jar:na]
-	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338) ~[eureka-client-jersey3-2.0.4.jar:2.0.4]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2026-03-27T00:33:17.425-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2026-03-27T00:33:17.425-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2026-03-27T00:33:17.426-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-03-27T00:33:17.426-04:00  INFO 3381 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-03-28T14:52:35.922-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-03-28T14:52:35.922-04:00  INFO 3752 --- [eureka-server] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

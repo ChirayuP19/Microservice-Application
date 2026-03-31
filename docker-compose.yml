@@ -49,6 +49,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      postgres:
 
   mongodb:
     container_name: mongo_db
@@ -94,6 +96,8 @@ services:
     volumes:
       - redis_data:/data
     restart: unless-stopped
+    networks:
+      postgres:
 
   elasticsearch:
     image: elasticsearch:8.12.0
@@ -106,18 +110,20 @@ services:
       - "9200:9200"
     volumes:
       - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      postgres:
     restart: unless-stopped
 
   kafka:
     image: confluentinc/cp-kafka:7.4.0
     container_name: kafka_container
     environment:
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     ports:
       - "9092:9092"
     volumes:
@@ -127,6 +133,12 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "kafka-broker-api-versions", "--bootstrap-server", "localhost:9092" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
@@ -170,6 +182,187 @@ services:
       postgres:
     command:
       - "start-dev"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/realms/master" ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 80s
+    restart: unless-stopped
+
+  config-server:
+    build: ./configserver
+    container_name: configserver_container
+    ports:
+      - "8888:8888"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=/config
+      - SPRING_PROFILES_ACTIVE=docker,native
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin123
+    volumes:
+      - ./configserver/src/main/resources/config:/config
+    networks:
+      postgres:
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 8888 || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+  eureka:
+    build: ./eureka
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    networks:
+      postgres:
+    depends_on:
+      config-server:
+        condition: service_healthy
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 40s
+    restart: unless-stopped
+
+  gateway-service:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "8080:8080"
+    networks:
+      postgres:
+    depends_on:
+      eureka:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mongodb:
+        condition: service_started
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+      - SPRING_PROFILES_ACTIVE=docker
+    restart: unless-stopped
+
+  user-service:
+    build: ./user
+    container_name: user
+    ports:
+      - "8082:8082"
+    networks:
+      postgres:
+    depends_on:
+      eureka:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      mongodb:
+        condition: service_started
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin123
+      - MONGO_URI=${MONGO_URI}
+      - MONGO_DB=${MONGO_DB}
+    restart: unless-stopped
+
+  product-service:
+    build: ./product
+    container_name: product
+    ports:
+      - "8081:8081"
+    depends_on:
+      eureka:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_started
+      elasticsearch:
+        condition: service_started
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin123
+      - DB_URL=${DB_URL}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    networks:
+      postgres:
+    restart: unless-stopped
+
+  order-service:
+    build: ./order
+    container_name: order
+    ports:
+      - "8083:8083"
+    depends_on:
+      eureka:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_started
+      kafka:
+        condition: service_healthy
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin123
+      - DB_URL_ORDER=${DB_URL_ORDER}
+      - DB_USER_ORDER=${DB_USER_ORDER}
+      - DB_PASSWORD_ORDER=${DB_PASSWORD_ORDER}
+    networks:
+      postgres:
+    restart: unless-stopped
+
+  notification-service:
+    build: ./notification
+    container_name: notification
+    ports:
+      - "8084:8084"
+    depends_on:
+      eureka:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      mail-dev:
+        condition: service_started
+    environment:
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=admin
+      - SPRING_RABBITMQ_PASSWORD=admin123
+    networks:
+      postgres:
+    restart: unless-stopped
 
 networks:
   postgres:
