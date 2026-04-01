@@ -62,6 +62,7 @@ All services register with **Eureka** and get config from **Config Server**.
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
 - At least **8GB RAM** available for Docker
+- If you are using in Windows and Linux please update latest version to **v1** other wise you go an error into docker container
 
 ### 1. Clone or download
 
